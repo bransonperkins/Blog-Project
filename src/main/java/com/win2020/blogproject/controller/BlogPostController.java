@@ -19,7 +19,7 @@ public class BlogPostController {
 
     private static List<BlogPost> posts = new ArrayList<>();
 
-    @GetMapping
+    @GetMapping(value = "/")
     public String index(BlogPost blogPost, Model model) {
         model.addAttribute("posts", posts);
         return "index";
@@ -27,7 +27,12 @@ public class BlogPostController {
 
     private BlogPost blogPost;
 
-    @PostMapping
+    @GetMapping(value = "/blogposts/new")
+    public String newBlog(BlogPost blogPost) {
+        return "new";
+    }
+
+    @PostMapping(value = "/blogposts")
     public String addNewBlogPost(BlogPost blogPost, Model model) {
         blogPostRepository.save(new BlogPost(blogPost.getTitle(), blogPost.getAuthor(), blogPost.getBlogEntry()));
         model.addAttribute("title", blogPost.getTitle());

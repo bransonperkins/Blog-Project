@@ -27,22 +27,11 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <p>Use the form below to submit a blog post:</p>
-        <form action="#" th:action="@{/}" th:object="${blogPost}" method="POST">
-            <label for="blogTitle">Title:</label>
-            <input type="text" name="blogTitle" th:field="*{title}" />
+        <a href="/blogposts/new">
+            <button class="btn btn-primary">Submit a New Blog Post</button>
+        </a>
 
-            <label for="blogAuthor">Author:</label>
-            <input type="text" name="blogAuthor" th:field="*{author}" />
-
-            <label for="blogEntry">Blog Entry:</label>
-            <input type="text" name="blogEntry" th:field="*{blogEntry}" />
-
-            <button type="submit">Submit Your Blog</button>
-        </form>
     </div>
 </div>
 
