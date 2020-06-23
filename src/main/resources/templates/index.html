@@ -13,10 +13,13 @@
 <div class="container">
     <div class="row">
         <h1>Welcome to Branson's Blog Site! :)</h1>
+    </div>
+    <div class="row">
         <h3>Check out our blog posts...</h3>
-
+    </div>
+    <div class="flex-lg-row">
         <div th:each="blog:${posts}">
-            <div class="col-sm">
+            <div class="col-lg-auto">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title" th:text="${blog.title}"></h5>

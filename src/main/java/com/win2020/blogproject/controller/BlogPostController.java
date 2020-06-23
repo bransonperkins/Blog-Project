@@ -17,7 +17,7 @@ public class BlogPostController {
     @Autowired
     private BlogPostRepository blogPostRepository;
 
-    private static List<BlogPost> posts = new ArrayList<>();
+    private static final List<BlogPost> posts = new ArrayList<>();
 
     @GetMapping(value = "/")
     public String index(BlogPost blogPost, Model model) {
@@ -35,6 +35,7 @@ public class BlogPostController {
     @PostMapping(value = "/blogposts")
     public String addNewBlogPost(BlogPost blogPost, Model model) {
         blogPostRepository.save(new BlogPost(blogPost.getTitle(), blogPost.getAuthor(), blogPost.getBlogEntry()));
+        posts.add(blogPost);
         model.addAttribute("title", blogPost.getTitle());
         model.addAttribute("author", blogPost.getAuthor());
         model.addAttribute("blogEntry", blogPost.getBlogEntry());
