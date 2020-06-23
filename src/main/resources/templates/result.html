@@ -10,13 +10,19 @@
 </head>
 <body>
 
-    <h3>Blog Post Form</h3>
-    <p>Thanks for your submission!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xl">
+            <h3>Blog Post Form</h3>
+            <p>Thanks for your submission!</p>
 
-    <h4>Blog Post</h4>
-    <p th:text="${title}"></p>
-    <p th:text="${author}"></p>
-    <p th:text="${blogEntry}"></p>
+            <h4>Blog Post</h4>
+            <p th:text="${title}"></p>
+            <p th:text="${author}"></p>
+            <p th:text="${blogEntry}"></p>
+        </div>
+    </div>
+</div>
 
 <script src="webjars/jquery/3.5.1/jquery.min.js"></script>
 <script src="webjars/popper.js/2.0.2/umd/popper.min.js"></script>
