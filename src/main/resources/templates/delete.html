@@ -2,33 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org" th:lang="en" lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <div th:replace="/fragments/styling :: head-style"></div>
     <title>Branson's Blog Site</title>
+
+    <div th:replace="/fragments/styling :: head-style"></div>
 </head>
 <body>
 
 <div th:replace="/fragments/navbar :: navbar"></div>
 <div class="container my-3">
+
     <div class="row">
         <div class="col-xl">
-            <h3>Blog Post Form</h3>
-            <p>Thank you for your submission!</p>
-
-            <h4>Blog Post</h4>
-            <p th:text="${blogPost.title}"></p>
-            <p th:text="${blogPost.author}"></p>
-            <p th:text="${blogPost.blogEntry}"></p>
+            <h3>This post has been deleted.</h3>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md">
-            <a href="#" th:href="@{blogposts/{id}(id=${blogPost.id})}">
-                <button class="btn btn-secondary">Edit This Post</button>
-            </a>
             <a href="/">
                 <button class="btn btn-primary">Return Home</button>
             </a>

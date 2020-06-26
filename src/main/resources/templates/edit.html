@@ -1,20 +1,19 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org" th:lang="en" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <div th:replace="/fragments/styling :: head-style"></div>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Branson's Blog Site</title>
-</head>
 
+    <div th:replace="/fragments/styling :: head-style"></div>
+</head>
 <body>
 <div th:replace="/fragments/navbar :: navbar"></div>
 <div class="container my-3">
+
     <div class="row">
-        <p>Use the form below to submit a blog post:</p>
-        <form action="#" th:action="@{/blogposts}" th:object="${blogPost}" method="POST">
+        <p>Use the form below to edit this blog post:</p>
+        <form action="#" th:action="@{~/blogposts/update/{id}(id=${blogPost.id})}" th:object="${blogPost}" method="POST">
             <label for="blogTitle">Title:</label>
             <input type="text" name="blogTitle" th:field="*{title}" />
 
@@ -24,12 +23,11 @@
             <label for="blogEntry">Blog Entry:</label>
             <input type="text" name="blogEntry" th:field="*{blogEntry}" />
 
-            <button class="btn btn-primary" type="submit">Submit Your Blog</button>
+            <button type="submit" class="btn btn-success">Submit Your Changes</button>
         </form>
     </div>
 </div>
 
 <div th:replace="/fragments/styling :: body-links"></div>
-
 </body>
 </html>
